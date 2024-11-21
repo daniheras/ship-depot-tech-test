@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 body {
-  color: theme("colors.vanilla.DEFAULT");
-  background: theme("colors.taupe.200");
   font-family: theme("fontFamily.sans");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* This is to avoid repetition of the same classes in multiple files */
+.bg-main {
+  @apply bg-gradient-to-b from-taupe-200 to-taupe-500 bg-fixed;
 }

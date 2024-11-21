@@ -1,7 +1,7 @@
-
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
+import clsx from 'clsx/lite';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={inter.variable}
+        className={clsx(inter.variable, "bg-main")}
       >
         {children}
       </body>
