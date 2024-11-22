@@ -12,5 +12,5 @@ body {
 
 /* This is to avoid repetition of the same classes in multiple files */
 .bg-main {
-  @apply bg-gradient-to-b from-taupe-200 to-taupe-500 bg-fixed;
+  @apply bg-gradient-to-b dark:from-taupe-200 from-walnut_brown-700 to-taupe-500 dark:to-taupe-500 bg-fixed;
 }

@@ -46,7 +46,7 @@ const NavMenuItem = ({ children, href, isActive }: NavMenuItemProps) => {
       className={clsx(
         "text-sm",
         isActive &&
-          "bg-timberwolf text-black px-6 py-4 rounded-full font-semibold"
+          "dark:bg-timberwolf dark:text-black bg-taupe-300 text-timberwolf px-6 py-4 rounded-full font-semibold"
       )}
     >
       <Link href={href}>{children}</Link>
@@ -57,7 +57,7 @@ const NavMenuItem = ({ children, href, isActive }: NavMenuItemProps) => {
 const NavMenu = () => {
   return (
     <nav className="md:flex flex-grow hidden absolute w-full h-full inset-0">
-      <ul className="flex flex-grow justify-center gap-5 text-timberwolf text-sm items-center">
+      <ul className="flex flex-grow justify-center gap-5 text-taupe-200 dark:text-timberwolf text-sm items-center">
         <NavMenuItem href="dashboard">Link 1</NavMenuItem>
         <NavMenuItem isActive href="dashboard">
           Link 2
@@ -73,7 +73,7 @@ const NavMenu = () => {
 export const Header = () => {
   return (
     <header className="h-24 flex items-center px-5 gap-3 justify-between relative">
-      <div className="text-vanilla-500 text-2xl">
+      <div className="text-taupe-300 dark:text-vanilla-500 text-2xl">
         <span className="font-black">ship</span>
         <span className="font-light">depot</span>
       </div>
