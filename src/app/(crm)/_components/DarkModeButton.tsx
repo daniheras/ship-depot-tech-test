@@ -8,7 +8,7 @@ export const DarkModeButton = () => {
   const { toggleTheme } = useTheme();
 
   return (
-    <ProfileMenuButton onClick={toggleTheme} className="hidden md:flex">
+    <ProfileMenuButton ariaLabel="Toggle dark mode" onClick={toggleTheme} className="hidden md:flex">
       <SunIcon />
     </ProfileMenuButton>
   );

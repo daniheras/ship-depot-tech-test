@@ -9,7 +9,7 @@ export const ProfileMenu = () => {
   return (
     <div className="flex gap-3 flex-grow md:flex-grow-0 justify-end z-10">
       <DarkModeButton/>
-      <ProfileMenuButton className="md:hidden">
+      <ProfileMenuButton ariaLabel="Main menu" className="md:hidden">
         <MenuIcon />
       </ProfileMenuButton>
     </div>
