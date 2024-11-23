@@ -9,6 +9,9 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
+      borderRadius: {
+        heavy: "40px"
+      },
       colors: {
         timberwolf: {
           DEFAULT: "#D3CCCB",
