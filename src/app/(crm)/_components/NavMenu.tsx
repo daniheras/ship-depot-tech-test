@@ -26,13 +26,12 @@ export const NavMenu = () => {
   return (
     <nav className="md:flex flex-grow hidden absolute w-full h-full inset-0 z-0">
       <ul className="flex flex-grow justify-center gap-5 text-taupe-200 dark:text-timberwolf text-sm items-center">
-        <NavMenuItem href="dashboard">Link 1</NavMenuItem>
         <NavMenuItem isActive href="dashboard">
-          Link 2
+          Dashboard
         </NavMenuItem>
-        <NavMenuItem href="dashboard">Link 3</NavMenuItem>
-        <NavMenuItem href="dashboard">Link 4</NavMenuItem>
-        <NavMenuItem href="dashboard">Link 5</NavMenuItem>
+        <NavMenuItem href="dashboard">Cases</NavMenuItem>
+        <NavMenuItem href="dashboard">Mechanics</NavMenuItem>
+        <NavMenuItem href="dashboard">Ship Parts</NavMenuItem>
       </ul>
     </nav>
   );
