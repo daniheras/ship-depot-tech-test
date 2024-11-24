@@ -1,7 +1,38 @@
+import { Button } from "@/app/_shared/components/Button/Button";
+import { Card } from "@/app/_shared/components/Card/Card";
+import { Input } from "@/app/_shared/components/Input";
+import { signIn } from "@/app/auth";
+import { StickyNote } from "./components/StickyNote";
+
 export default function LoginPage() {
   return (
-    <div className="bg-blue-500">
-      <h1>Login Page</h1>
-    </div>
+    <form
+      action={async (formData) => {
+        "use server";
+        await signIn("credentials", formData);
+      }}
+    >
+      <StickyNote />
+      <Card>
+        <div className="flex flex-col gap-4 p-6">
+          <Input
+            label="Email"
+            name="email"
+            type="email"
+            placeholder="Your email"
+          ></Input>
+          <Input
+            label="Password"
+            type="password"
+            placeholder="Your password"
+            name="password"
+          />
+          <Input label="Remember me" type="checkbox" name="remember" />
+        </div>
+        <div className="p-6 pt-0">
+          <Button type="submit">Sign In</Button>
+        </div>
+      </Card>
+    </form>
   );
 }

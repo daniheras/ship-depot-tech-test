@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin Adminson",
+      "email": "admin@shipdepot.com",
+      "role": "admin",
+      "password": "admin"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "johndoe@freelancemechanics.com",
+      "role": "mechanic",
+      "password": "admin"
+    }
+  ]
+}
