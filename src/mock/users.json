@@ -1,18 +1,20 @@
 {
-  "users": [
+  "data": [
     {
       "id": 1,
       "name": "Admin Adminson",
-      "email": "admin@shipdepot.com",
+      "email": "admin@test.com",
       "role": "admin",
-      "password": "admin"
+      "password": "admin",
+      "image": "https://i.pravatar.cc/150?u=admin@test.com"
     },
     {
       "id": 2,
       "name": "Jane Doe",
-      "email": "johndoe@freelancemechanics.com",
+      "email": "johndoe@test.com",
       "role": "mechanic",
-      "password": "admin"
+      "password": "admin",
+      "image": "https://i.pravatar.cc/150?u=johndoe@test.com"
     }
   ]
 }

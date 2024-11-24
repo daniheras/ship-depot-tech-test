@@ -1,12 +1,14 @@
-import { Provider } from "next-auth/providers";
+import { CredentialsConfig } from "next-auth/providers";
 import Credentials from "next-auth/providers/credentials";
-import { users } from "@/mock/users.json";
+import UsersMockData from "@/mock/users.json";
+
+const users = UsersMockData.data;
 
 const findUser = async (email: string) => {
   return users.find((user) => user.email === email);
 }
 
-const CredentialsProvider: Provider = Credentials({
+const CredentialsProvider: CredentialsConfig = Credentials({
   credentials: {
     email: { label: "Email", type: "email" },
     password: { label: "Password", type: "password" },
@@ -16,7 +18,6 @@ const CredentialsProvider: Provider = Credentials({
     if (!credentials?.email || !credentials?.password) {
       throw new Error("Missing email or password.");
     }
-
     const user = await findUser(credentials.email as string);
 
     if (!user) {
@@ -36,7 +37,7 @@ const CredentialsProvider: Provider = Credentials({
       role: user.role,
     }
   },
-  type: "credentials"
+  type: "credentials",
 });
 
 export { CredentialsProvider };
