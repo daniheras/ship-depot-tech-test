@@ -3,7 +3,14 @@
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
 
-const MechanicAvatar = () => {
+interface Mechanic {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+}
+
+const MechanicAvatar = (data: Mechanic) => {
   const variants = {
     expanded: {
       width: "48px",
@@ -20,12 +27,12 @@ const MechanicAvatar = () => {
       whileHover="expanded"
       className="left-0 relative"
     >
-      <Avatar />
+      <Avatar img={data.image} />
     </motion.div>
   );
 };
 
-export const MechanicsGap = () => {
+export const MechanicsGap = ({ data: mechanics }: { data: Mechanic[] }) => {
   const variants = {
     expanded: {
       paddingRight: "40px",
@@ -47,14 +54,11 @@ export const MechanicsGap = () => {
           className={"h-full inline-flex flex-grow pl-5 items-center relative"}
         >
           {/* Gap content */}
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
-          <MechanicAvatar />
+          {
+            mechanics.map((mechanic) => (
+              <MechanicAvatar {...mechanic} key={mechanic.id} />
+            ))
+          }
         </motion.div>
 
         {/* Rounded corners */}
