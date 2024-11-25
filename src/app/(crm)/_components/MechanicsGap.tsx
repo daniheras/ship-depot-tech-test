@@ -1,5 +1,6 @@
 "use client";
 
+import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
 
 const MechanicAvatar = () => {
@@ -19,7 +20,7 @@ const MechanicAvatar = () => {
       whileHover="expanded"
       className="left-0 relative"
     >
-      <div className="w-12 h-12 bg-slate-500 border-white border-2 rounded-full relative z-30 cursor-pointer bg-contain" />
+      <Avatar />
     </motion.div>
   );
 };

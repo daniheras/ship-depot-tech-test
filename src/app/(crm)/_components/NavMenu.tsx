@@ -1,4 +1,7 @@
+import { CasesIcon } from "@/app/_shared/icons/Cases";
 import { DashboardIcon } from "@/app/_shared/icons/Dashboard";
+import { MechanicsIcon } from "@/app/_shared/icons/Mechanics";
+import { ShipPartsIcon } from "@/app/_shared/icons/ShipParts";
 import { Url } from "@/app/_shared/types/Url";
 import clsx from "clsx/lite";
 import Link from "next/link";
@@ -14,9 +17,9 @@ const NavMenuItem = ({ children, href, isActive, iconSlot }: NavMenuItemProps) =
   return (
     <li
       className={clsx(
-        "text-sm",
+        "text-sm flex items-center h-12 gap-1",
         isActive &&
-          "dark:bg-timberwolf dark:text-black bg-taupe-300 text-timberwolf px-6 py-4 rounded-full font-semibold flex items-center max-h-12"
+          "dark:bg-timberwolf dark:text-black bg-taupe-300 text-timberwolf px-6 py-4 rounded-full font-semibold"
       )}
     >
       {
@@ -38,9 +41,9 @@ export const NavMenu = () => {
         <NavMenuItem isActive href="dashboard" iconSlot={<DashboardIcon height={15} width={15} />}>
           Dashboard
         </NavMenuItem>
-        <NavMenuItem href="dashboard">Cases</NavMenuItem>
-        <NavMenuItem href="dashboard">Mechanics</NavMenuItem>
-        <NavMenuItem href="dashboard">Ship Parts</NavMenuItem>
+        <NavMenuItem href="dashboard" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
+        <NavMenuItem href="dashboard" iconSlot={<MechanicsIcon height={15} width={15} />}>Mechanics</NavMenuItem>
+        <NavMenuItem href="dashboard" iconSlot={<ShipPartsIcon height={15} width={15} />}>Ship Parts</NavMenuItem>
       </ul>
     </nav>
   );
