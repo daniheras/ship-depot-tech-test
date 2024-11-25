@@ -2,13 +2,7 @@
 
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
-
-interface Mechanic {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-}
+import { Mechanic } from "../types";
 
 const MechanicAvatar = (data: Mechanic) => {
   const variants = {

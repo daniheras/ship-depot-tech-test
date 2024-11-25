@@ -1,7 +1,5 @@
 import { CasesIcon } from "@/app/_shared/icons/Cases";
 import { DashboardIcon } from "@/app/_shared/icons/Dashboard";
-import { MechanicsIcon } from "@/app/_shared/icons/Mechanics";
-import { ShipPartsIcon } from "@/app/_shared/icons/ShipParts";
 import { Url } from "@/app/_shared/types/Url";
 import clsx from "clsx/lite";
 import Link from "next/link";
@@ -38,12 +36,10 @@ export const NavMenu = () => {
   return (
     <nav className="md:flex flex-grow hidden absolute w-full h-full inset-0 z-0">
       <ul className="flex flex-grow justify-center gap-5 text-taupe-200 dark:text-timberwolf text-sm items-center">
-        <NavMenuItem isActive href="dashboard" iconSlot={<DashboardIcon height={15} width={15} />}>
+        <NavMenuItem isActive href="/" iconSlot={<DashboardIcon height={15} width={15} />}>
           Dashboard
         </NavMenuItem>
-        <NavMenuItem href="dashboard" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
-        <NavMenuItem href="dashboard" iconSlot={<MechanicsIcon height={15} width={15} />}>Mechanics</NavMenuItem>
-        <NavMenuItem href="dashboard" iconSlot={<ShipPartsIcon height={15} width={15} />}>Ship Parts</NavMenuItem>
+        <NavMenuItem href="cases" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
       </ul>
     </nav>
   );

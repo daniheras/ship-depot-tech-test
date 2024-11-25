@@ -6,6 +6,7 @@ interface ButtonProps extends PropsWithChildren {
   type?: "button" | "submit" | "reset";
   variant?: "primary" | "secondary";
   className?: string;
+  disabled?: boolean;
 }
 
 export const Button = ({
@@ -14,11 +15,13 @@ export const Button = ({
   type = "button",
   className = "",
   variant = "primary",
+  disabled = false,
   ...props
 }: ButtonProps) => {
   return (
     <button
     {...props}
+      disabled={disabled}
       type={type}
       onClick={onClick}
       className={clsx(
@@ -26,7 +29,8 @@ export const Button = ({
         className,
         variant === "primary" &&
           "bg-taupe-300 hover:bg-taupe-400 text-white dark:bg-taupe-700 dark:hover:bg-taupe-600 active:bg-taupe-300 dark:active:bg-taupe-600 focus:bg-taupe-300 dark:focus:bg-taupe-600",
-        variant === "secondary" && "bg-white text-taupe-300"
+        variant === "secondary" && "bg-white text-taupe-300",
+        disabled && "bg-taupe-300 text-white dark:bg-taupe-700 dark:text-white"
       )}
     >
       {children}

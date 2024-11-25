@@ -2,8 +2,10 @@
   "name": "ship-depot-asafe-tech-test",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "node src/scripts/generateCases.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
