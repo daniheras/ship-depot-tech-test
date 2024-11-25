@@ -14,9 +14,11 @@ export const Button = ({
   type = "button",
   className = "",
   variant = "primary",
+  ...props
 }: ButtonProps) => {
   return (
     <button
+    {...props}
       type={type}
       onClick={onClick}
       className={clsx(

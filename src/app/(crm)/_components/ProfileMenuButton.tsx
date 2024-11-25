@@ -12,9 +12,11 @@ export const ProfileMenuButton = ({
   className,
   onClick,
   ariaLabel = "",
+  ...props
 }: ProfileMenuButtonProps) => {
   return (
     <button
+      {...props}
       aria-label={ariaLabel}
       onClick={onClick}
       className={clsx(
