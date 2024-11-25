@@ -1,7 +1,7 @@
 import { Button } from "@/app/_shared/components/Button/Button";
 import { Card } from "@/app/_shared/components/Card/Card";
 import { Input } from "@/app/_shared/components/Input";
-import { signIn } from "@/app/auth";
+import { signIn } from "@/app/(auth)";
 import { StickyNote } from "./components/StickyNote";
 
 export default function LoginPage() {

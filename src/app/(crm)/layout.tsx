@@ -3,8 +3,15 @@
 import { PropsWithChildren } from "react";
 import { Header } from "./_components/Header";
 import { MechanicsGap } from "./_components/MechanicsGap";
+import { auth } from "../(auth)";
+import { redirect } from "next/navigation";
 
-export default function DashboardLayout({ children }: PropsWithChildren) {
+export default async function DashboardLayout({ children }: PropsWithChildren) {
+  const session = await auth();
+  if (!session || !session.user) {
+    redirect("/login");
+  }
+
   return (
     <div className="h-screen flex flex-col md:pb-5 md:gap-5">
       <Header />

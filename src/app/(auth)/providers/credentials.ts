@@ -35,6 +35,7 @@ const CredentialsProvider: CredentialsConfig = Credentials({
       name: user.name,
       email: user.email,
       role: user.role,
+      image: user.image,
     }
   },
   type: "credentials",
