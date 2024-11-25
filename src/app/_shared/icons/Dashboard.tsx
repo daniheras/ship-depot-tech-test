@@ -5,14 +5,11 @@ import { motion, useAnimation } from 'framer-motion';
 import type { IconProps } from './types';
 
 const pathVariants: Variants = {
-  normal: { opacity: 1 },
-  animate: (i: number) => ({
-    opacity: [0, 1],
-    transition: { delay: i * 0.1, duration: 0.3 },
-  }),
+  normal: { translateX: 0, translateY: 0 },
+  animate: { translateX: 1.1, translateY: -1.1 },
 };
 
-const SunIcon = ({ width = 24, height = 24 }: IconProps) => {
+const DashboardIcon = ({ width = 24, height = 24 }: IconProps) => {
   const controls = useAnimation();
 
   return (
@@ -25,35 +22,28 @@ const SunIcon = ({ width = 24, height = 24 }: IconProps) => {
         xmlns="http://www.w3.org/2000/svg"
         width={width}
         height={height}
-        viewBox="0 0 24 24"
+        viewBox='0 0 24 24'
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="12" cy="12" r="4" />
-        {[
-          'M12 2v2',
-          'm19.07 4.93-1.41 1.41',
-          'M20 12h2',
-          'm17.66 17.66 1.41 1.41',
-          'M12 20v2',
-          'm6.34 17.66-1.41 1.41',
-          'M2 12h2',
-          'm4.93 4.93 1.41 1.41',
-        ].map((d, index) => (
-          <motion.path
-            key={d}
-            d={d}
-            animate={controls}
-            variants={pathVariants}
-            custom={index + 1}
-          />
-        ))}
+        <motion.path
+          d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"
+          transition={{
+            type: 'spring',
+            stiffness: 250,
+            damping: 15,
+            bounce: 0.6,
+          }}
+          variants={pathVariants}
+          animate={controls}
+        />
+        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
       </svg>
     </div>
   );
 };
 
-export { SunIcon };
+export { DashboardIcon };
