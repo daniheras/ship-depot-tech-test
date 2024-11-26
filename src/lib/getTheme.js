@@ -4,7 +4,7 @@
  * This strategy is used to avoid the flash of the default theme when the user has already selected a theme.
  * Using the `useEffect` hook to set the theme will cause a flash of the default theme.
  * Using cookies cause all pages to be dynamically rendered on the server mandatorily.
- * Using context cause all its children to be client-side rendered.
+ * Using context cause all its children to be client-side bundled (not rendered but bundled).
  * Theres no strategy without downsides, but this one is the best for this use case.
  * Read more about this here: https://github.com/vercel/next.js/discussions/53063
  */
