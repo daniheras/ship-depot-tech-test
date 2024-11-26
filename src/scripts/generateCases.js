@@ -13,14 +13,21 @@ const generateRepairCases = async () => {
     // Fetch ships from SWAPI
     const starshipsResponse = await fetch('https://swapi.dev/api/starships/');
     const starshipsData = await starshipsResponse.json();
-    let starships = starshipsData.results.filter(ship => !excludedIds.includes(ship.url.split('/').filter(Boolean).pop()));
-    
+    let starships = starshipsData.results.filter(
+      (ship) => !excludedIds.includes(ship.url.split('/').filter(Boolean).pop())
+    );
+
     // If there are more pages, fetch them all
     let nextPage = starshipsData.next ? starshipsData.next.replace('http:', 'https:') : null;
     while (nextPage) {
       const nextResponse = await fetch(nextPage);
       const nextData = await nextResponse.json();
-      starships = [...starships, ...nextData.results.filter(ship => !excludedIds.includes(ship.url.split('/').filter(Boolean).pop()))];
+      starships = [
+        ...starships,
+        ...nextData.results.filter(
+          (ship) => !excludedIds.includes(ship.url.split('/').filter(Boolean).pop())
+        ),
+      ];
       nextPage = nextData.next ? nextData.next.replace('http:', 'https:') : null;
     }
 
@@ -31,7 +38,9 @@ const generateRepairCases = async () => {
       const selectedStarship = starships[randomStarshipIndex];
 
       const mechanicAssigned = Math.random() < 0.05 ? Math.floor(Math.random() * 5) + 1 : null;
-      const status = Math.random() < 0.5 ? 'ACTIVE' : 'PENDING';
+
+      // Ensure ACTIVE status only if a mechanic is assigned
+      const status = mechanicAssigned ? (Math.random() < 0.5 ? 'ACTIVE' : 'PENDING') : 'PENDING';
 
       repairCases.push({
         id: i + 1,
@@ -39,10 +48,13 @@ const generateRepairCases = async () => {
           id: selectedStarship.url.split('/').filter(Boolean).pop(),
           model: selectedStarship.model,
           name: selectedStarship.name,
-          image: `https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url.split('/').filter(Boolean).pop()}.jpg`
+          image: `https://starwars-visualguide.com/assets/img/starships/${selectedStarship.url
+            .split('/')
+            .filter(Boolean)
+            .pop()}.jpg`,
         },
         mechanic_id: mechanicAssigned,
-        status: status
+        status: status,
       });
     }
 

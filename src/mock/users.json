@@ -6,7 +6,7 @@
       "email": "admin@test.com",
       "role": "admin",
       "password": "admin",
-      "image": "https://i.pravatar.cc/150?u=admin@test.com"
+      "image": "https://cloudfront-us-east-1.images.arcpublishing.com/copesa/LS6NAJWL4ZA4PMRN4MTK5YYLBE.jpeg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "email": "johndoe@test.com",
       "role": "mechanic",
       "password": "admin",
-      "image": "https://i.pravatar.cc/150?u=johndoe@test.com"
+      "image": "https://i.ebayimg.com/images/g/bOQAAOSwVw5iDb0b/s-l1200.jpg"
     }
   ]
 }

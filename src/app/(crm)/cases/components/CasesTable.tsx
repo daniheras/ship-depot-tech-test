@@ -60,10 +60,10 @@ export const CasesTable = () => {
               key={c.id}
               className={clsx(
                 index % 2 === 0 && "bg-walnut_brown-400",
-                "hover:bg-walnut_brown-200 transition-colors "
+                "hover:bg-walnut_brown-200 transition-colors"
               )}
             >
-              <TableCell className="rounded-l-lg">{c.id}</TableCell>
+              <TableCell className="rounded-l-lg w-20">{c.id}</TableCell>
               <TableCell>
                 <Badge
                   className={clsx(
@@ -75,7 +75,7 @@ export const CasesTable = () => {
                   {c.status}
                 </Badge>
               </TableCell>
-              <TableCell>{c.ship?.name}</TableCell>
+              <TableCell>{c.ship?.model}</TableCell>
               <td className="text-gray-800 text-sm w-14 relative rounded-r-lg">
                 <Avatar className="left-0 right-0 m-auto" />
               </td>

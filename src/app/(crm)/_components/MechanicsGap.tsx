@@ -16,10 +16,11 @@ const MechanicAvatar = (data: Mechanic) => {
 
   return (
     <motion.div
+      drag
       variants={variants}
       initial="collapsed"
       whileHover="expanded"
-      className="left-0 relative"
+      className="left-0 relative z-50"
     >
       <Avatar img={data.image} />
     </motion.div>

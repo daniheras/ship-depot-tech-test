@@ -10,7 +10,7 @@ export default function LoginPage() {
       action={async (formData) => {
         "use server";
         const plainFormData = Object.fromEntries(formData.entries());
-        await signIn("credentials", {...plainFormData, redirectTo: "/dashboard"});
+        await signIn("credentials", {...plainFormData, redirectTo: "/"});
       }}
     >
       <StickyNote />

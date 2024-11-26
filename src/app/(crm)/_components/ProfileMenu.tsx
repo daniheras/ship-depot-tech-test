@@ -29,7 +29,7 @@ export const ProfileMenu = ({ userData }: { userData: User }) => {
             ariaLabel="Profile menu"
             className="hidden md:block"
           >
-            <Avatar img={userData.image!} />
+            <Avatar className="bg-center" img={userData.image!} />
           </ProfileMenuButton>
         }
       >
