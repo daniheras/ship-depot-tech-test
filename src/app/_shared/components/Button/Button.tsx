@@ -25,7 +25,7 @@ export const Button = ({
       type={type}
       onClick={onClick}
       className={cn(
-        "w-full rounded-heavy py-2 px-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
+        "w-full rounded-md py-2 px-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
         className,
         variant === "primary" &&
           "bg-gray-800 hover:bg-gray-700 text-white dark:bg-gray-300 dark:hover:bg-gray-200 dark:text-gray-800 active:bg-gray-600 dark:active:bg-gray-100 focus:bg-gray-700 dark:focus:bg-gray-300",
