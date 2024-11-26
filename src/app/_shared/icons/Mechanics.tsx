@@ -29,7 +29,7 @@ const MechanicsIcon = ({ width = 24, height = 24 }: IconProps) => {
 
   return (
     <div
-      className="cursor-pointer select-none hover:bg-accent rounded-md transition-colors duration-200 flex items-center justify-center"
+      className="cursor-pointer select-none rounded-md transition-colors duration-200 flex items-center justify-center"
       onMouseEnter={() => controls.start('animate')}
       onMouseLeave={() => controls.start('normal')}
     >

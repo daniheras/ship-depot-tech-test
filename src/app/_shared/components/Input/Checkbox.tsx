@@ -12,12 +12,13 @@ export const Checkbox = ({ label, name, className }: InputProps) => {
           name={name}
           type="checkbox"
           className={cn(
-            "peer h-5 w-5 cursor-pointer transition-all appearance-none rounded-full shadow hover:shadow-md border border-slate-300 dark:border-white dark:border-2 checked:bg-taupe-300 dark:checked:bg-timberwolf-900 checked:border-taupe-300 dark:checked:border-timberwolf-900",
+            "peer h-5 w-5 cursor-pointer transition-all appearance-none rounded-full shadow hover:shadow-md border",
+            "border-slate-300 checked:bg-gray-800 checked:border-gray-800 dark:border-white dark:border-2 dark:checked:bg-white dark:checked:border-white",
             className
           )}
           id="check-2"
         />
-        <span className="absolute flex text-white dark:text-taupe-200 opacity-0 pointer-events-none peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <span className="absolute flex text-white dark:text-gray-800 opacity-0 pointer-events-none peer-checked:opacity-100 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-3.5 w-3.5"
@@ -34,7 +35,7 @@ export const Checkbox = ({ label, name, className }: InputProps) => {
         </span>
       </label>
       <label
-        className="cursor-pointer ml-2 text-taupe-200 dark:text-white text-sm"
+        className="cursor-pointer ml-2 text-gray-800 dark:text-white text-sm"
         htmlFor="check-2"
       >
         {label}

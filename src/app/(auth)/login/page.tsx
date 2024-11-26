@@ -14,8 +14,8 @@ export default function LoginPage() {
     >
       <StickyNote />
       <div className="flex flex-col items-center justify-center h-screen">
-        <div className="relative mx-auto w-full max-w-[24rem] rounded-xl overflow-hidden shadow-sm dark:border dark:border-taupe-200">
-          <div className="relative flex flex-col bg-white dark:bg-taupe-300">
+        <div className="relative mx-auto w-full max-w-[24rem] rounded-xl overflow-hidden shadow-sm dark:border dark:border-gray-500">
+          <div className="relative flex flex-col bg-white dark:bg-gray-800">
             <div className="flex flex-col gap-4 p-6">
               <Input
                 label="Email"

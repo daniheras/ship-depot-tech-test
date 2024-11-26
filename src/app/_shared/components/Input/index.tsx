@@ -21,7 +21,7 @@ export const Input = (props: InputProps) => {
       {label && (
         <label
           className={cn(
-            "block mb-2 text-sm dark:text-white text-taupe-200",
+            "block mb-2 text-sm dark:text-white text-gray-800",
             labelClassName
           )}
         >
@@ -32,7 +32,7 @@ export const Input = (props: InputProps) => {
         name={name}
         type={type}
         className={cn(
-          "w-full rounded-heavy bg-transparent dark:placeholder:text-timberwolf-500 text-taupe-200 bg-timberwolf dark:text-white text-sm border border-slate-200 px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow",
+          "w-full rounded-heavy bg-transparent dark:placeholder:text-gray-500 text-gray-800 dark:bg-gray-800 dark:text-white text-sm border border-slate-200 px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow",
           className
         )}
         placeholder={placeholder}

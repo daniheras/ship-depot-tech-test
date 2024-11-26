@@ -20,7 +20,7 @@ export const ProfileMenuButton = ({
       aria-label={ariaLabel}
       onClick={onClick}
       className={cn(
-        "bg-timberwolf h-12 w-12 flex items-center justify-center rounded-full cursor-pointer",
+        "bg-gray-700 dark:bg-gray-300 dark:text-gray-900 text-white h-12 w-12 flex items-center justify-center rounded-full cursor-pointer",
         className
       )}
     >

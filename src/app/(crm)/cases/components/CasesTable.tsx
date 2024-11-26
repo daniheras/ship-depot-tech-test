@@ -88,7 +88,7 @@ export const CasesTable = () => {
               <TableCell className="py-8 md:py-0">
                 <Badge
                   className={cn(
-                    c.status === "PENDING" && "dark:bg-vista_blue-300 bg-vista_blue-300 text-white",
+                    c.status === "PENDING" && "dark:bg-blue-600 bg-blue-600 text-white",
                     c.status === "REPAIRED" && "dark:bg-green-700 bg-green-700 text-white",
                     c.status === "ACTIVE" && "dark:bg-purple-700 bg-purple-700 text-white",
                   )}

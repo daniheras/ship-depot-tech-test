@@ -24,7 +24,7 @@ const DropdownRoot = ({
             className={cn(
               "radix-side-top:animate-slide-up radix-side-bottom:animate-slide-down z-40",
               "w-48 rounded-lg px-1.5 py-1 shadow-md md:w-56",
-              "bg-white dark:bg-taupe-100"
+              "bg-white dark:bg-gray-950"
             )}
           >
             {children}

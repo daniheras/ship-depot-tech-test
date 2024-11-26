@@ -13,11 +13,11 @@ export const DropdownItem = ({ label, icon }: RadixMenuItem) => {
       key={`region-tool-menu-item-${label}`}
       className={cn(
         "flex cursor-pointer select-none items-center rounded-md px-2 py-2 text-xs outline-none gap-2",
-        "text-taupe-500 focus:bg-gray-50 dark:text-timberwolf dark:focus:bg-taupe-100",
+        "text-gray-950 focus:bg-gray-50 dark:text-gray-300 dark:focus:bg-gray-800",
       )}
     >
       {icon}
-      <span className="flex-grow text-taupe-200 dark:text-gray-300">
+      <span className="flex-grow text-gray-950 dark:text-gray-300">
         {label}
       </span>
     </DropdownMenuItem>

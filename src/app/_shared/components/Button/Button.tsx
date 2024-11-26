@@ -28,9 +28,9 @@ export const Button = ({
         "w-full rounded-heavy py-2 px-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
         className,
         variant === "primary" &&
-          "bg-taupe-300 hover:bg-taupe-400 text-white dark:bg-taupe-700 dark:hover:bg-taupe-600 active:bg-taupe-300 dark:active:bg-taupe-600 focus:bg-taupe-300 dark:focus:bg-taupe-600",
-        variant === "secondary" && "bg-white text-taupe-300",
-        disabled && "bg-taupe-300 text-white dark:bg-taupe-700 dark:text-white"
+          "bg-gray-800 hover:bg-gray-700 text-white dark:bg-gray-300 dark:hover:bg-gray-200 dark:text-gray-800 active:bg-gray-600 dark:active:bg-gray-100 focus:bg-gray-700 dark:focus:bg-gray-300",
+        variant === "secondary" && "bg-white text-gray-900",
+        disabled && "bg-gray-900 cursor-not-allowed"
       )}
     >
       {children}

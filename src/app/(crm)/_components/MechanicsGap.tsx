@@ -36,7 +36,7 @@ const MechanicAvatar = (data: Mechanic) => {
       className="left-0 relative z-50"
       onClick={handleAvatarClicked}
     >
-      <Avatar className={cn(selectedMechanic === data.id && "border-green-400 border-4")} img={data.image} />
+      <Avatar className={cn(selectedMechanic === data.id && "dark:border-accent-400 border-accent-400 border-4")} img={data.image} />
     </motion.div>
   );
 };
