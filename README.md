@@ -23,17 +23,17 @@ Contains the authentication logic, components, and routes like Login.
 ## Work with the project
 
 ### Development
-1. `npm install` to install the dependencies.
+1. `pnpm install` to install the dependencies.
 2. `npx auth secret` to create a `.env.local` file with the secret key.
-3. `npm run dev` to start the development server.
+3. `pnpm dev` to start the development server.
 
 ### Production
-1. `npm run build` to build the project.
-2. `npm run start` to start the production server.
+1. `pnpm build` to build the project.
+2. `pnpm start` to start the production server.
 
 ### Testing
-- `npm run test` to run the unit tests.
-- `npm run test:e2e` to run the e2e tests.
+- `pnpm test` to run the unit tests.
+- `pnpm test:e2e` to run the e2e tests.
 
 ## About the motion library
 At the moment of writing this, the `motion` library is not fully compatible with the latest version of NextJS so i needed to use the alpha version under `framer-motion` which it is.
