@@ -3,7 +3,7 @@ import { cn } from "../../utils";
 export const Card = ({
   children,
   className,
-}: { children: React.ReactNode; className?: string }) => {
+}: { children?: React.ReactNode; className?: string }) => {
   return (
     <div
       className={cn(

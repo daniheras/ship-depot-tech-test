@@ -10,8 +10,8 @@ export const Header = async () => {
   }
 
   return (
-    <header className="h-24 flex items-center px-5 gap-3 justify-between relative">
-      <div className="dark:text-accent text-black text-2xl z-10">
+    <header className="h-24 min-h-24 sticky top-0 flex items-center px-5 gap-3 justify-between md:relative">
+      <div className="dark:text-gray-100 text-black text-2xl z-10">
         <span className="font-black">ship</span>
         <span className="font-light">depot</span>
       </div>

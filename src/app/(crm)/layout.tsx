@@ -20,7 +20,7 @@ export default async function DashboardLayout({
   const mechanics = await getMechanics();
 
   return (
-    <div className="h-screen flex flex-col md:pb-5 md:gap-5">
+    <div className="h-screen flex flex-col md:pb-5 md:gap-5 flex-grow max-w-[1600px]">
       <Header />
       <MechanicsProvider mechanics={mechanics}>
         <div className="md:px-5 flex flex-col flex-grow">

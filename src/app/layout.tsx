@@ -28,7 +28,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: getTheme }} />
       </head>
       <body
-        className={cn(inter.variable, "bg-main")}
+        className={cn(inter.variable, "bg-main flex justify-center")}
       >
         {children}
       </body>

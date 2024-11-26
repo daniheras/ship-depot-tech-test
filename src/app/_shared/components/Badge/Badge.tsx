@@ -11,7 +11,8 @@ export const Badge = ({
   return (
     <span
       className={cn(
-        "whitespace-nowrap rounded-full bg-taupe-500 px-2.5 py-0.5 text-sm font-semibold text-timberwolf dark:bg-purple-700 dark:text-purple-100",
+        "whitespace-nowrap rounded-full bg-taupe-500 px-2.5 py-0.5",
+        "text-xs font-semibold text-timberwolf dark:bg-purple-700 dark:text-purple-100",
         className
       )}
     >
