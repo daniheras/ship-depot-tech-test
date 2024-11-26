@@ -12,6 +12,7 @@ const chartData = [
 const chartConfig = {
   total: {
     label: "Active Cases",
+    color: "hsl(var(--chart-0))",
   },
   chrome: {
     label: "Chrome",

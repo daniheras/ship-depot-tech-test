@@ -1,5 +1,7 @@
 import { CasesIcon } from "@/app/_shared/icons/Cases";
 import { DashboardIcon } from "@/app/_shared/icons/Dashboard";
+import { MechanicsIcon } from "@/app/_shared/icons/Mechanics";
+import { ShipPartsIcon } from "@/app/_shared/icons/ShipParts";
 import { Url } from "@/app/_shared/types/Url";
 import { cn } from "@/app/_shared/utils";
 import Link from "next/link";
@@ -9,17 +11,17 @@ interface NavMenuItemProps extends PropsWithChildren {
   href: Url;
   isActive?: boolean;
   iconSlot?: React.ReactNode;
+  disabled?: boolean;
 }
 
-const NavMenuItem = ({ children, href, isActive, iconSlot }: NavMenuItemProps) => {
+const NavMenuItem = ({ children, href, isActive, iconSlot, disabled }: NavMenuItemProps) => {
   return (
-    <li
-      className={cn(
-        "text-sm flex items-center h-12 gap-1",
-        isActive &&
-          "dark:bg-gray-300 dark:text-black bg-gray-950 text-gray-300 px-6 py-4 rounded-full font-semibold"
-      )}
-    >
+    <Link href={href} as="li" className={cn(
+      "text-sm flex items-center h-12 gap-1",
+      disabled && "cursor-not-allowed text-gray-500 dark:text-gray-600",
+      isActive &&
+        "dark:bg-gray-300 dark:text-black bg-gray-950 text-gray-300 px-6 py-4 rounded-full font-semibold"
+    )}>
       {
         iconSlot && (
           <>
@@ -27,8 +29,8 @@ const NavMenuItem = ({ children, href, isActive, iconSlot }: NavMenuItemProps) =
           </>
         )
       }
-      <Link href={href}>{children}</Link>
-    </li>
+      {children}
+    </Link>
   );
 };
 
@@ -39,7 +41,9 @@ export const NavMenu = () => {
         <NavMenuItem isActive href="/" iconSlot={<DashboardIcon height={15} width={15} />}>
           Dashboard
         </NavMenuItem>
-        <NavMenuItem href="cases" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
+        <NavMenuItem disabled href="cases" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
+        <NavMenuItem disabled href="cases" iconSlot={<MechanicsIcon height={15} width={15} />}>Mechanics</NavMenuItem>
+        <NavMenuItem disabled href="cases" iconSlot={<ShipPartsIcon height={15} width={15} />}>Ship Parts</NavMenuItem>
       </ul>
     </nav>
   );

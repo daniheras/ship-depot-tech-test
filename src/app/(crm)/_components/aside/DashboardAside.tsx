@@ -4,6 +4,7 @@ import { Card } from "@/app/_shared/components/Card/Card";
 import { SelectedMechanicCard } from "./SelectedMechanicCard";
 import { useMechanicsContext } from "../../_context/mechanics/useMechanicsContext";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { ActiveCases } from "../charts/ActiveCases";
 
 const asideVariants: Variants = {
   visible: { x: 0, opacity: 1 },
@@ -31,8 +32,10 @@ export const DashboardAside = () => {
             </h3>
             <div className="flex flex-col flex-grow gap-2">
               <SelectedMechanicCard />
+              <Card>
+                <ActiveCases />
+              </Card>
               <Card className="flex-grow">Content placeholder</Card>
-              <Card>Content placeholder</Card>
             </div>
           </div>
         </motion.aside>
