@@ -8,6 +8,13 @@ const __dirname = path.dirname(__filename);
 // List of starship IDs to exclude
 const excludedIds = [2, 74, 59, 52, 66, 49, 58, 65, 75, 32, 3, 61, 68, 64, 63, 17].map(id => id.toString());
 
+// Helper function to generate a random month and year
+const getRandomDate = (startYear, endYear) => {
+  const year = Math.floor(Math.random() * (endYear - startYear + 1)) + startYear;
+  const month = Math.floor(Math.random() * 12) + 1;
+  return { year, month };
+};
+
 const generateRepairCases = async () => {
   try {
     // Fetch ships from SWAPI
@@ -40,7 +47,14 @@ const generateRepairCases = async () => {
       const mechanicAssigned = Math.random() < 0.05 ? Math.floor(Math.random() * 5) + 1 : null;
 
       // Ensure ACTIVE status only if a mechanic is assigned
-      const status = mechanicAssigned ? (Math.random() < 0.5 ? 'ACTIVE' : 'PENDING') : 'PENDING';
+      const possibleStatuses = mechanicAssigned ? ['ACTIVE', 'PENDING', 'REPAIRED'] : ['PENDING'];
+      const status = possibleStatuses[Math.floor(Math.random() * possibleStatuses.length)];
+
+      // Generate random open date
+      const openDate = getRandomDate(2020, 2024);
+
+      // Add close date only if the case is REPAIRED
+      const closeDate = status === 'REPAIRED' ? getRandomDate(openDate.year, 2024) : null;
 
       repairCases.push({
         id: i + 1,
@@ -55,6 +69,16 @@ const generateRepairCases = async () => {
         },
         mechanic_id: mechanicAssigned,
         status: status,
+        open_date: {
+          month: openDate.month,
+          year: openDate.year,
+        },
+        close_date: closeDate
+          ? {
+              month: closeDate.month,
+              year: closeDate.year,
+            }
+          : null,
       });
     }
 

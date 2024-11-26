@@ -13,6 +13,6 @@ export interface RepairCase {
     model: string; // Model of the starship
     image: string; // URL of the starship image
   };
-  mechanicId: number | null; // ID of the assigned mechanic, or null if not assigned
+  mechanic_id: number | null; // ID of the assigned mechanic, or null if not assigned
   status: "ACTIVE" | "PENDING"; // Status of the repair case
 }

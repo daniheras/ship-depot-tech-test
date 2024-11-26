@@ -3,6 +3,7 @@
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
 import { Mechanic } from "../types";
+import { useMechanicsContext } from "../_context/mechanics/useMechanicsContext";
 
 const MechanicAvatar = (data: Mechanic) => {
   const variants = {
@@ -27,7 +28,9 @@ const MechanicAvatar = (data: Mechanic) => {
   );
 };
 
-export const MechanicsGap = ({ data: mechanics }: { data: Mechanic[] }) => {
+export const MechanicsGap = () => {
+  const mechanics = useMechanicsContext();
+  
   const variants = {
     expanded: {
       paddingRight: "40px",

@@ -6,6 +6,7 @@ import { useState, useEffect, PropsWithChildren, ReactNode } from "react";
 import { RepairCase } from "../../types";
 import clsx from "clsx/lite";
 import { Badge } from "@/app/_shared/components/Badge/Badge";
+import { useMechanicsContext } from "../../_context/mechanics/useMechanicsContext";
 
 const TableHeader = ({ children }: PropsWithChildren) => (
   <th className="text-sm dark:text-timberwolf-800 font-bold text-center py-2">
@@ -29,6 +30,8 @@ export const CasesTable = () => {
   const [cases, setCases] = useState<RepairCase[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
+
+  const mechanics = useMechanicsContext();
 
   const fetchCases = async (page: number) => {
     const res = await fetch(`/api/cases?page=${page}`);
@@ -81,7 +84,7 @@ export const CasesTable = () => {
               </TableCell>
               <TableCell>{c.ship?.model}</TableCell>
               <td className="dark:text-gray-800 text-sm w-14 relative rounded-r-lg">
-                <Avatar className="left-0 right-0 m-auto" />
+                <Avatar img={mechanics.find(mechanic => mechanic.id === c.mechanic_id)?.image} className="left-0 right-0 m-auto cursor-default" />
               </td>
             </tr>
           ))}
