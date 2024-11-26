@@ -73,7 +73,7 @@ export const CasesTable = () => {
           </tr>
         </thead>
         <tbody className="min-h-[200px]">
-          {filteredCases.map((c, index) => (
+          {filteredCases.map((c) => (
             <tr
               key={c.id}
               className={cn(  
