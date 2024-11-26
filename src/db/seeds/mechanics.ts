@@ -1,5 +1,5 @@
-import { db } from './db';
-import { mechanics } from './schema';
+import { db } from '../db';
+import { mechanics } from '../schema';
 
 const mechanicsData = [
   {

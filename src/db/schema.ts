@@ -30,8 +30,8 @@ export const mechanics = sqliteTable('mechanics', {
 });
 
 export const cases = sqliteTable("cases", {
-  id: text("id").primaryKey(),
-  createdAt: text("created_at").notNull().default("CURRENT_TIMESTAMP"),
+  id: id(),
+  createdAt: createdAt(),
   shipModel: text("ship_model").notNull(),
   shipImage: text("ship_image").notNull(),
   mechanicId: text("mechanic_id").references(() => mechanics.id),
