@@ -24,7 +24,7 @@ export default async function DashboardLayout({
       <Header />
       <MechanicsProvider mechanics={mechanics}>
         <div className="md:px-5 flex flex-col flex-grow">
-          <div className="bg-gray-300 dark:bg-slate-800 md:rounded-md flex-grow relative flex flex-col">
+          <div className="bg-gray-300 dark:bg-slate-900 shadow-xl md:rounded-md flex-grow relative flex flex-col">
             <div className="w-full lg:h-20 h-0">
               <MechanicsGap />
             </div>

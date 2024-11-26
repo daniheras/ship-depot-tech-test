@@ -38,7 +38,7 @@ body {
     url("/dots_pattern.svg");
   background-position: center;
   background-repeat: repeat;
-  background-size: 20%;
+  background-size: 200px;
 }
 
 .dark .bg-main {
@@ -49,4 +49,5 @@ body {
       theme("colors.gray.700")
     ),
     url("/dots_pattern.svg");
+  background-size: 400px;
 }

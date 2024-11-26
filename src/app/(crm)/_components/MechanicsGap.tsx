@@ -29,7 +29,6 @@ const MechanicAvatar = (data: Mechanic) => {
 
   return (
     <motion.div
-      drag
       variants={variants}
       initial="collapsed"
       whileHover="expanded"
