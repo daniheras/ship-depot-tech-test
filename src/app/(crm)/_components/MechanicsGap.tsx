@@ -4,8 +4,11 @@ import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
 import { Mechanic } from "../types";
 import { useMechanicsContext } from "../_context/mechanics/useMechanicsContext";
+import { cn } from "@/app/_shared/utils";
 
 const MechanicAvatar = (data: Mechanic) => {
+  const { selectedMechanic, setSelectedMechanic } = useMechanicsContext();
+
   const variants = {
     expanded: {
       width: "48px",
@@ -15,6 +18,15 @@ const MechanicAvatar = (data: Mechanic) => {
     },
   };
 
+  const handleAvatarClicked = () => {
+    if (selectedMechanic === data.id) {
+      setSelectedMechanic(null);
+      return;
+    }
+
+    setSelectedMechanic(data.id);
+  }
+
   return (
     <motion.div
       drag
@@ -22,15 +34,16 @@ const MechanicAvatar = (data: Mechanic) => {
       initial="collapsed"
       whileHover="expanded"
       className="left-0 relative z-50"
+      onClick={handleAvatarClicked}
     >
-      <Avatar img={data.image} />
+      <Avatar className={cn(selectedMechanic === data.id && "border-green-400 border-4")} img={data.image} />
     </motion.div>
   );
 };
 
 export const MechanicsGap = () => {
-  const mechanics = useMechanicsContext();
-  
+  const { mechanics } = useMechanicsContext();
+
   const variants = {
     expanded: {
       paddingRight: "40px",
@@ -52,11 +65,9 @@ export const MechanicsGap = () => {
           className={"h-full inline-flex flex-grow pl-5 items-center relative"}
         >
           {/* Gap content */}
-          {
-            mechanics.map((mechanic) => (
-              <MechanicAvatar {...mechanic} key={mechanic.id} />
-            ))
-          }
+          {mechanics.map((mechanic) => (
+            <MechanicAvatar {...mechanic} key={mechanic.id} />
+          ))}
         </motion.div>
 
         {/* Rounded corners */}
