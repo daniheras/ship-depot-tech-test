@@ -39,6 +39,7 @@ export const cases = sqliteTable("cases", {
     enum: ["active", "pending", "finished"],
   }).notNull(),
   closedAt: text("closed_at"),
+  budget: text("budget"),
 });
 
 export const mechanicsRelations = relations(mechanics, ({ many }) => ({
