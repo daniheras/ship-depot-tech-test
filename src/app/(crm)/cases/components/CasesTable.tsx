@@ -2,7 +2,7 @@
 
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { Button } from "@/app/_shared/components/Button/Button";
-import { useState, useEffect, PropsWithChildren, ReactNode } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { RepairCase } from "../../types";
 import { Badge } from "@/app/_shared/components/Badge/Badge";
 import { useMechanicsContext } from "../../_context/mechanics/useMechanicsContext";

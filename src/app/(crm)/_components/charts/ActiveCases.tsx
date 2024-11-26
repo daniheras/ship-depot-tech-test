@@ -2,7 +2,7 @@
 
 import { ChartConfig, ChartContainer, ChartTooltip, ChartTooltipContent } from "@/app/_shared/components/Chart/Chart"
 import { useMemo } from "react"
-import { Bar, BarChart, Label, Pie, PieChart } from "recharts"
+import { Label, Pie, PieChart } from "recharts"
 
 const chartData = [
   { status: "active", total: 275, fill: "var(--color-chrome)" },
@@ -71,7 +71,7 @@ export const ActiveCases = () => {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-foreground text-3xl font-bold text-white"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
