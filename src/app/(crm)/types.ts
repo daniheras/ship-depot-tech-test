@@ -6,13 +6,13 @@ export interface Mechanic {
 }
 
 export interface RepairCase {
-  id: number; // Unique identifier for the repair case
+  id: number;
   ship: {
-    id: string; // ID of the starship (as returned from SWAPI)
-    name: string; // Name of the starship
-    model: string; // Model of the starship
-    image: string; // URL of the starship image
+    id: string;
+    name: string;
+    model: string;
+    image: string;
   };
-  mechanic_id: number | null; // ID of the assigned mechanic, or null if not assigned
-  status: "ACTIVE" | "PENDING" | "REPAIRED"; // Status of the repair case
+  mechanic_id: number | null;
+  status: "ACTIVE" | "PENDING" | "REPAIRED";
 }
