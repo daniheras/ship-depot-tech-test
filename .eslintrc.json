@@ -1,16 +1,4 @@
 {
   "extends": ["next/core-web-vitals", "next/typescript"],
-  "rules": {
-    "no-restricted-imports": [
-      "error",
-      {
-        "paths": [
-          {
-            "name": "clsx",
-            "message": "Please use clsx/lite instead."
-          }
-        ]
-      }
-    ]
-  }
+  "rules": {}
 }
