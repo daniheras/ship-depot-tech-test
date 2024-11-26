@@ -2,7 +2,6 @@ import { randomUUID } from "crypto";
 import { relations, sql } from "drizzle-orm";
 import { sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-// Funciones comunes para columnas
 const id = () =>
   text("id")
     .primaryKey()
@@ -13,7 +12,7 @@ const createdAt = () =>
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull();
 
-// Tablas
+
 export const users = sqliteTable('users', {
   id: id(),
   createdAt: createdAt(),

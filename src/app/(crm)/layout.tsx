@@ -3,6 +3,7 @@ import { MechanicsGap } from "./_components/MechanicsGap";
 import { auth } from "@/app/(auth)";
 import { redirect } from "next/navigation";
 import { MechanicsProvider } from "./_context/mechanics/MechanicsProvider";
+import { getMechanics } from "./_server/mechanics";
 
 export default async function DashboardLayout({
   children,
@@ -16,7 +17,7 @@ export default async function DashboardLayout({
     redirect("/login");
   }
 
-  const { data: mechanics } = await import("@/mock/mechanics.json");
+  const mechanics = await getMechanics();
 
   return (
     <div className="h-screen flex flex-col md:pb-5 md:gap-5">

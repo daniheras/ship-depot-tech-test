@@ -2,9 +2,9 @@
 
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
 import { motion } from "framer-motion";
-import { Mechanic } from "../types";
 import { useMechanicsContext } from "../_context/mechanics/useMechanicsContext";
 import { cn } from "@/app/_shared/utils";
+import { Mechanic } from "../_server/schema";
 
 const MechanicAvatar = (data: Mechanic) => {
   const { selectedMechanic, setSelectedMechanic } = useMechanicsContext();
