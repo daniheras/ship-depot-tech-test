@@ -1,5 +1,5 @@
-import clsx from "clsx/lite";
 import { PropsWithChildren } from "react";
+import { cn } from "../../utils";
 
 interface ButtonProps extends PropsWithChildren {
   onClick?: () => void;
@@ -24,7 +24,7 @@ export const Button = ({
       disabled={disabled}
       type={type}
       onClick={onClick}
-      className={clsx(
+      className={cn(
         "w-full rounded-heavy py-2 px-4 border border-transparent text-center text-sm transition-all shadow-md hover:shadow-lg focus:shadow-none active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none",
         className,
         variant === "primary" &&

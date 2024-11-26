@@ -1,4 +1,4 @@
-import clsx from "clsx/lite";
+import { cn } from "@/app/_shared/utils";
 import { PropsWithChildren } from "react";
 
 interface ProfileMenuButtonProps extends PropsWithChildren {
@@ -19,7 +19,7 @@ export const ProfileMenuButton = ({
       {...props}
       aria-label={ariaLabel}
       onClick={onClick}
-      className={clsx(
+      className={cn(
         "bg-timberwolf h-12 w-12 flex items-center justify-center rounded-full cursor-pointer",
         className
       )}

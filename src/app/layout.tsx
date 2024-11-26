@@ -1,9 +1,9 @@
 import { Inter } from 'next/font/google'
 import type { Metadata } from "next";
 import "./globals.css";
-import clsx from 'clsx/lite';
 
 import { getTheme } from '../lib/getTheme';
+import { cn } from './_shared/utils';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -28,7 +28,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: getTheme }} />
       </head>
       <body
-        className={clsx(inter.variable, "bg-main")}
+        className={cn(inter.variable, "bg-main")}
       >
         {children}
       </body>

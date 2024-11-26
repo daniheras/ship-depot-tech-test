@@ -1,5 +1,5 @@
-import clsx from "clsx/lite";
 import { InputProps } from "./types";
+import { cn } from "../../utils";
 
 export const Checkbox = ({ label, name, className }: InputProps) => {
   return (
@@ -11,7 +11,7 @@ export const Checkbox = ({ label, name, className }: InputProps) => {
         <input
           name={name}
           type="checkbox"
-          className={clsx(
+          className={cn(
             "peer h-5 w-5 cursor-pointer transition-all appearance-none rounded-full shadow hover:shadow-md border border-slate-300 dark:border-white dark:border-2 checked:bg-taupe-300 dark:checked:bg-timberwolf-900 checked:border-taupe-300 dark:checked:border-timberwolf-900",
             className
           )}

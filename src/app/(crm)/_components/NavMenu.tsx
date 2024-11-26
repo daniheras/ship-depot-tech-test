@@ -1,7 +1,7 @@
 import { CasesIcon } from "@/app/_shared/icons/Cases";
 import { DashboardIcon } from "@/app/_shared/icons/Dashboard";
 import { Url } from "@/app/_shared/types/Url";
-import clsx from "clsx/lite";
+import { cn } from "@/app/_shared/utils";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 
@@ -14,7 +14,7 @@ interface NavMenuItemProps extends PropsWithChildren {
 const NavMenuItem = ({ children, href, isActive, iconSlot }: NavMenuItemProps) => {
   return (
     <li
-      className={clsx(
+      className={cn(
         "text-sm flex items-center h-12 gap-1",
         isActive &&
           "dark:bg-timberwolf dark:text-black bg-taupe-300 text-timberwolf px-6 py-4 rounded-full font-semibold"
