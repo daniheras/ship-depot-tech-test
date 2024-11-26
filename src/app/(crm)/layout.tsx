@@ -26,9 +26,7 @@ export default async function DashboardLayout({
             <MechanicsGap data={mechanics} />
           </div>
           <main className="p-4 flex flex-col flex-grow">
-          <div className="h-full grid grid-cols-1 lg:grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-4">
-            {children}
-          </div>
+          {children}
           </main>
         </div>
       </div>
