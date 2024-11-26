@@ -29,38 +29,25 @@ export const mechanics = sqliteTable('mechanics', {
   image: text('image').notNull(),
 });
 
-export const ships = sqliteTable('ships', {
-  id: id(),
-  createdAt: createdAt(),
-  model: text('model').notNull(),
-  name: text('name').notNull(),
-  image: text('image').notNull(),
+export const cases = sqliteTable("cases", {
+  id: text("id").primaryKey(),
+  createdAt: text("created_at").notNull().default("CURRENT_TIMESTAMP"),
+  shipModel: text("ship_model").notNull(),
+  shipImage: text("ship_image").notNull(),
+  mechanicId: text("mechanic_id").references(() => mechanics.id),
+  status: text("status", {
+    enum: ["active", "pending", "finished"],
+  }).notNull(),
+  closedAt: text("closed_at"),
 });
 
-export const cases = sqliteTable('cases', {
-  id: id(),
-  createdAt: createdAt(),
-  shipId: text('ship_id')
-    .notNull()
-    .references(() => ships.id),
-  mechanicId: text('mechanic_id')
-    .references(() => mechanics.id),
-  status: text().$type<"pending" | "active" | "repaired">().default("pending"),
-  openDate: text('open_date').notNull(),
-  closeDate: text('close_date'),
-});
+export const mechanicsRelations = relations(mechanics, ({ many }) => ({
+  cases: many(cases),
+}));
 
 export const casesRelations = relations(cases, ({ one }) => ({
-  ship: one(ships, {
-    fields: [cases.shipId],
-    references: [ships.id],
-  }),
   mechanic: one(mechanics, {
     fields: [cases.mechanicId],
     references: [mechanics.id],
   }),
-}));
-
-export const mechanicsRelations = relations(mechanics, ({ many }) => ({
-  cases: many(cases),
 }));
