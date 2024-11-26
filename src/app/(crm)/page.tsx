@@ -1,5 +1,5 @@
-import { ActiveCases } from "./_components/charts/ActiveCases";
-import { CasesWrapper } from "./cases/components/CasesWrapper";
+/* import { ActiveCases } from "./_components/charts/ActiveCases";
+import { CasesWrapper } from "./cases/components/CasesWrapper"; */
 
 export default function Dashboard() {
   return (

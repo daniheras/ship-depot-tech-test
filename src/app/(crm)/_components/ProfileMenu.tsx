@@ -1,20 +1,11 @@
-"use client";
-
 import { ProfileMenuButton } from "./ProfileMenuButton";
 import { MenuIcon } from "@/app/_shared/icons/Menu";
 import { Avatar } from "@/app/_shared/components/Avatar/Avatar";
-import dynamic from "next/dynamic";
 import { User } from "next-auth";
 import { DropdownItem, DropdownRoot } from "@/app/_shared/components/Dropdown";
-import { LogOut, UserIcon } from "lucide-react";
-
-const SetThemeButton = dynamic(
-  () => import("./DarkModeButton").then((mod) => mod.DarkModeButton),
-  {
-    ssr: false,
-    loading: () => <ProfileMenuButton ariaLabel="Placholder button while loading" />,
-  }
-);
+import { LogOutIcon, UserIcon } from "lucide-react";
+import { SetThemeButton } from "./SetThemeButton";
+import { signOut } from "@/app/(auth)";
 
 export const ProfileMenu = ({ userData }: { userData: User }) => {
   return (
@@ -34,7 +25,14 @@ export const ProfileMenu = ({ userData }: { userData: User }) => {
         }
       >
         <DropdownItem label="Profile" icon={<UserIcon width={14} />} />
-        <DropdownItem label="Log out" icon={<LogOut width={14} />} />
+        <DropdownItem
+          label="Sign out"
+          icon={<LogOutIcon width={14} />}
+          onClick={async () => {
+            "use server";
+            await signOut();
+          }}
+        />
       </DropdownRoot>
     </div>
   );

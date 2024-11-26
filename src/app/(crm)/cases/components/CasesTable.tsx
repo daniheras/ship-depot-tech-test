@@ -49,7 +49,7 @@ export const CasesTable = () => {
 
   useEffect(() => {
     fetchCases(currentPage);
-  }, [currentPage, selectedMechanic]);
+  }, [currentPage, selectedMechanic, fetchCases]);
 
   const filteredCases = selectedMechanic
     ? cases.filter((c) => c.mechanic_id === selectedMechanic)
