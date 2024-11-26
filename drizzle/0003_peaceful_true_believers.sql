@@ -1,0 +1,1 @@
+ALTER TABLE `cases` ADD `mechanic_id` text REFERENCES mechanics(id);

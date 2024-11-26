@@ -1,0 +1,1 @@
+ALTER TABLE `cases` ADD `ship_id` text NOT NULL REFERENCES ships(id);
