@@ -46,7 +46,7 @@ body {
   background-image: linear-gradient(
       to bottom,
       theme("colors.gray.950"),
-      theme("colors.gray.700")
+      theme("colors.gray.950")
     ),
     url("/dots_pattern.svg");
   background-size: 400px;
