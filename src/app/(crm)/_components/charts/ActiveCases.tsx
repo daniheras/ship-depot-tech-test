@@ -1,12 +1,12 @@
 "use client";
+
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/app/_shared/components/Chart/Chart";
-import { TrendingUp } from "lucide-react";
-import { Label, Pie, PieChart, Sector } from "recharts";
+import { Pie, PieChart, Sector } from "recharts";
 import { PieSectorDataItem } from "recharts/types/polar/Pie";
 
 const chartData = [

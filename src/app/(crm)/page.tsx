@@ -2,7 +2,7 @@ import { Pagination } from "../_shared/components/Pagination/Pagination";
 import { DashboardAside } from "./_components/aside/DashboardAside";
 import { CaseRow } from "./_components/CaseRow";
 
-export default function Dashboard() {
+export default async function Dashboard() {
   return (
     <>
       <div className="flex flex-grow gap-2">

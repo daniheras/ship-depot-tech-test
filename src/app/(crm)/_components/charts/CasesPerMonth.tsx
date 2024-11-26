@@ -6,7 +6,6 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/app/_shared/components/Chart/Chart";
-import { TrendingUp } from "lucide-react";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
 
 const chartData = [
