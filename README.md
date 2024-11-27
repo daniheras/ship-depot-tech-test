@@ -11,6 +11,15 @@ Is a fictional CRM for an hypothetical Star Wars spaceship repair company. Is in
 ## Project Structure
 The project uses the NextJS app router. The project is divided into domains. Each domain has its own folder in the `app` directory. Its a new approach that im interested in trying out.
 
+## Dashboard rendering strategy
+![alt text](docs/dashboard-rendering-strategy.png)
+
+As you can see in the image the "/" page, which is the dashboard, is divided into 2 slots:
+- children slot: Where the aside and layour are rendered.
+- @cases: where we fetch and render the cases.
+
+This approach allows us to render them in parallel and not block the rendering of the cases and main dashboard content. Also, when clicking on pagination, the @cases slot is the only one that is re-rendered, fetching the new data in the server.
+
 ### Shared Domain
 The `_shared` directory contains shared components, hooks, and utilities shared across the domains. Thats the case for the `ui library` as well.
 
