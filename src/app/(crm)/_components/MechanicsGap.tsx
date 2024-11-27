@@ -45,7 +45,9 @@ const MechanicAvatar = (data: Mechanic) => {
       onClick={handleAvatarClicked}
     >
       <Avatar
+        size="large"
         className={cn(
+          "cursor-pointer",
           selectedMechanic === data.id &&
             "dark:border-accent-400 border-accent-400 border-4"
         )}

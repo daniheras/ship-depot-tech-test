@@ -16,8 +16,9 @@ export const CaseRow = (data: Case) => {
   return (
     <Card className="flex-grow text-sm relative flex gap-10 max-h-24 items-center">
       <Avatar
+        size="large"
+        shape="rounded"
         img={data.shipImage}
-        className="rounded-md bg-center bg-cover bg-no-repeat cursor-default"
       />
       <div className="flex flex-col gap-1 max-w-44 min-w-44">
         <span className="truncate text-ellipsis">{data.shipModel}</span>
