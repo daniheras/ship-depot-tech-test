@@ -6,6 +6,12 @@ import { Case } from "../../_server/schema";
 import { MechanicRowData } from "./MechanicRowData";
 import { Credits } from "@/app/_shared/icons/Credits";
 
+const STATUS_VARIANT_MAPPER = {
+  'finished': 'success',
+  'pending': 'default',
+  'active': 'warning',
+} as const;
+
 export const CaseRow = (data: Case) => {
   return (
     <Card className="flex-grow text-sm relative flex gap-10 max-h-24 items-center">
@@ -21,7 +27,7 @@ export const CaseRow = (data: Case) => {
       </div>
       <div className="text-xs items-center flex max-w-32 flex-grow">
         <div className="flex gap-2">
-          <Badge>{data.status}</Badge>
+          <Badge variant={STATUS_VARIANT_MAPPER[data.status]}>{data.status}</Badge>
         </div>
       </div>
       <div className="hidden xl:flex flex-col justify-center text-sm flex-grow max-w-[200]">
