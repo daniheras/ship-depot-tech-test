@@ -41,9 +41,9 @@ export const NavMenu = () => {
         <NavMenuItem isActive href="/" iconSlot={<DashboardIcon height={15} width={15} />}>
           Dashboard
         </NavMenuItem>
-        <NavMenuItem disabled href="cases" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
-        <NavMenuItem disabled href="cases" iconSlot={<MechanicsIcon height={15} width={15} />}>Mechanics</NavMenuItem>
-        <NavMenuItem disabled href="cases" iconSlot={<ShipPartsIcon height={15} width={15} />}>Ship Parts</NavMenuItem>
+        <NavMenuItem disabled href="#" iconSlot={<CasesIcon height={15} width={15} />}>Cases</NavMenuItem>
+        <NavMenuItem disabled href="#" iconSlot={<MechanicsIcon height={15} width={15} />}>Mechanics</NavMenuItem>
+        <NavMenuItem disabled href="#" iconSlot={<ShipPartsIcon height={15} width={15} />}>Ship Parts</NavMenuItem>
       </div>
     </nav>
   );
