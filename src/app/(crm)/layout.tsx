@@ -8,9 +8,11 @@ import { getMechanics } from "./_server/mechanics";
 export default async function DashboardLayout({
   children,
   cases,
+  aside,
 }: {
   children: React.ReactNode;
   cases: React.ReactNode;
+  aside: React.ReactNode;
 }) {
   const session = await auth();
   if (!session || !session.user) {
@@ -31,6 +33,7 @@ export default async function DashboardLayout({
             <div className="p-4 flex flex-col flex-grow">
               <div className="flex flex-grow gap-2">
                 {children}
+                {aside}
                 {cases}
               </div>
             </div>
