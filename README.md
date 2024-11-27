@@ -6,7 +6,6 @@ Is a fictional CRM for an hypothetical Star Wars spaceship repair company. Is in
 - The project is made with the latest version of [`NextJS`](https://nextjs.org/).
 - Uses [`motion`](https://motion.dev/) for basic animations.
 - Is tested with [`Jest`](https://jestjs.io/) and [`React Testing Library`](https://testing-library.com/docs/react-testing-library/intro/).
-- E2E tests are made with [`Cypress`](https://www.cypress.io/).
 
 ## Project Structure
 The project uses the NextJS app router. The project is divided into domains. Each domain has its own folder in the `app` directory. Its a new approach that im interested in trying out.
@@ -42,7 +41,6 @@ Contains the authentication logic, components, and routes like Login.
 
 ### Testing
 - `pnpm test` to run the unit tests.
-- `pnpm test:e2e` to run the e2e tests.
 
 ## About the motion library
 At the moment of writing this, the `motion` library is not fully compatible with the latest version of NextJS so i needed to use the alpha version under `framer-motion` which it is.
