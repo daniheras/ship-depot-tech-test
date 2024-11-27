@@ -12,7 +12,6 @@ const createdAt = () =>
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull();
 
-
 export const users = sqliteTable('users', {
   id: id(),
   createdAt: createdAt(),
@@ -52,3 +51,4 @@ export const casesRelations = relations(cases, ({ one }) => ({
     references: [mechanics.id],
   }),
 }));
+

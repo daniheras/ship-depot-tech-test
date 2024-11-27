@@ -1,12 +1,13 @@
+import { db } from "@/db/db";
+import { users } from "@/db/schema";
+import { eq } from "drizzle-orm";
 import { CredentialsConfig } from "next-auth/providers";
 import Credentials from "next-auth/providers/credentials";
-import UsersMockData from "@/mock/users.json";
 
-const users = UsersMockData.data;
-
-const findUser = async (email: string) => {
-  return users.find((user) => user.email === email);
-}
+export const findUser = async (email: string) => {
+  const user = await db.select().from(users).where(eq(users.email, email)).limit(1);
+  return user[0];
+};
 
 const CredentialsProvider: CredentialsConfig = Credentials({
   credentials: {
@@ -14,7 +15,6 @@ const CredentialsProvider: CredentialsConfig = Credentials({
     password: { label: "Password", type: "password" },
   },
   authorize: async (credentials: Partial<Record<"email" | "password", unknown>>) => {
-    // Verify the credentials if valid
     if (!credentials?.email || !credentials?.password) {
       throw new Error("Missing email or password.");
     }
@@ -29,12 +29,9 @@ const CredentialsProvider: CredentialsConfig = Credentials({
       throw new Error("Invalid password.");
     }
 
-    // return user object with their profile data
     return {
       id: user.id.toString(),
-      name: user.name,
       email: user.email,
-      role: user.role,
       image: user.image,
     }
   },
