@@ -24,7 +24,7 @@ export const ProfileMenu = ({ userData }: { userData: User }) => {
           </ProfileMenuButton>
         }
       >
-        <DropdownItem label="Profile" icon={<UserIcon width={14} />} />
+        <DropdownItem className="cursor-not-allowed" label="Profile" icon={<UserIcon width={14} />} />
         <DropdownItem
           label="Sign out"
           icon={<LogOutIcon width={14} />}

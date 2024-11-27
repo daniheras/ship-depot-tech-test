@@ -7,9 +7,16 @@ interface RadixMenuItem {
   icon?: ReactNode;
   onClick?: () => void;
   type?: "button" | "submit";
+  className?: string;
 }
 
-export const DropdownItem = ({ label, icon, type, onClick }: RadixMenuItem) => {
+export const DropdownItem = ({
+  label,
+  icon,
+  type,
+  onClick,
+  className,
+}: RadixMenuItem) => {
   return (
     <DropdownMenuItem asChild key={`region-tool-menu-item-${label}`}>
       <button
@@ -17,7 +24,8 @@ export const DropdownItem = ({ label, icon, type, onClick }: RadixMenuItem) => {
         type={type}
         className={cn(
           "flex cursor-pointer select-none items-center justify-start text-left rounded-md px-2 py-2 text-xs outline-none gap-2 w-full",
-          "text-gray-950 focus:bg-gray-50 dark:text-gray-300 dark:focus:bg-gray-800"
+          "text-gray-950 focus:bg-gray-50 dark:text-gray-300 dark:focus:bg-gray-800",
+          className
         )}
       >
         {icon}

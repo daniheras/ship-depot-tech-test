@@ -46,3 +46,5 @@ Contains the authentication logic, components, and routes like Login.
 At the moment of writing this, the `motion` library is not fully compatible with the latest version of NextJS so i needed to use the alpha version under `framer-motion` which it is.
 
 About the size of the library, it is a bit heavy, it can be optimized with the [LazyMotion approach](https://motion.dev/docs/react-lazy-motion) but i didn't consider it necessary for this test as the results in the reports are very good.
+
+[Additional Documentation](docs/TEST_README.md)
