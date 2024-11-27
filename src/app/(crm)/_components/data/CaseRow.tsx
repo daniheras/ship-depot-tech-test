@@ -56,7 +56,7 @@ export const CaseRow = (data: Case) => {
         </span>
       </div>
       <div className="flex-grow flex items-center justify-end">
-        <button disabled className="cursor-not-allowed">
+        <button aria-label="Expand item" disabled className="cursor-not-allowed">
           <ExpandIcon width={20} height={20} />
         </button>
       </div>

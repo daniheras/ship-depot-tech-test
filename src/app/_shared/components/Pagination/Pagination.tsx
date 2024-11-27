@@ -35,6 +35,7 @@ export const Pagination = async ({
         <Link
           href={createUrl(prevPage)}
           className="text-gray-700 dark:text-gray-400 transform rotate-180"
+          aria-label={`Go previous page: ${prevPage}`}
         >
           <ChevronRight {...chevronSize} />
         </Link>
@@ -46,6 +47,7 @@ export const Pagination = async ({
         <Link
           href={createUrl(nextPage)}
           className="text-gray-700 dark:text-gray-400"
+          aria-label={`Go next page: ${nextPage}`}
         >
           <ChevronRight {...chevronSize} />
         </Link>
