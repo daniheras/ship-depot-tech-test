@@ -7,8 +7,10 @@ import { getMechanics } from "./_server/mechanics";
 
 export default async function DashboardLayout({
   children,
+  cases,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
+  cases: React.ReactNode;
 }) {
   const session = await auth();
   if (!session || !session.user) {
@@ -26,11 +28,14 @@ export default async function DashboardLayout({
             <div className="w-full lg:h-20 h-0">
               <MechanicsGap />
             </div>
-            <main className="p-4 flex flex-col flex-grow">
-              {children}
-            </main>
+            <div className="p-4 flex flex-col flex-grow">
+              <div className="flex flex-grow gap-2">
+                {children}
+                {cases}
+              </div>
+            </div>
           </div>
-        </div>  
+        </div>
       </MechanicsProvider>
     </div>
   );

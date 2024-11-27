@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { useMechanicsContext } from "../_context/mechanics/useMechanicsContext";
 import { cn } from "@/app/_shared/utils";
 import { Mechanic } from "../_server/schema";
+import { useRouter } from "next/navigation";
 
 const MechanicAvatar = (data: Mechanic) => {
+  const { push } = useRouter();
   const { selectedMechanic, setSelectedMechanic } = useMechanicsContext();
 
   const variants = {
@@ -19,13 +21,20 @@ const MechanicAvatar = (data: Mechanic) => {
   };
 
   const handleAvatarClicked = () => {
+    const params = new URLSearchParams(window.location.search);
     if (selectedMechanic === data.id) {
       setSelectedMechanic(null);
+
+      params.delete("mechanic");
+      push(`?${params.toString()}`);
       return;
     }
-
     setSelectedMechanic(data.id);
-  }
+
+    params.delete("page");
+    params.set("mechanic", data.id.toString());
+    push(`?${params.toString()}`);
+  };
 
   return (
     <motion.div
@@ -35,7 +44,13 @@ const MechanicAvatar = (data: Mechanic) => {
       className="left-0 relative z-50"
       onClick={handleAvatarClicked}
     >
-      <Avatar className={cn(selectedMechanic === data.id && "dark:border-accent-400 border-accent-400 border-4")} img={data.image} />
+      <Avatar
+        className={cn(
+          selectedMechanic === data.id &&
+            "dark:border-accent-400 border-accent-400 border-4"
+        )}
+        img={data.image}
+      />
     </motion.div>
   );
 };
