@@ -7,15 +7,7 @@ import {
   ChartTooltipContent,
 } from "@/app/_shared/components/Chart/Chart";
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from "recharts";
-
-const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 273 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
-];
+import { type CasesPerMonth } from "../../_server/schema";
 
 const chartConfig = {
   desktop: {
@@ -24,7 +16,9 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function CasesPerMonth() {
+export function CasesPerMonth({ data }: {data: CasesPerMonth}) {
+  const chartData = data.slice(-6);
+
   return (
     <ChartContainer
       config={chartConfig}
@@ -35,8 +29,8 @@ export function CasesPerMonth() {
         <PolarAngleAxis dataKey="month" />
         <PolarGrid />
         <Radar
-          dataKey="desktop"
-          fill="var(--color-desktop)"
+          dataKey="total"
+          fill="#fff"
           fillOpacity={0.6}
           dot={{
             r: 4,

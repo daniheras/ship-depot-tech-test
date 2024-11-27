@@ -8,41 +8,36 @@ import {
 } from "@/app/_shared/components/Chart/Chart";
 import { Pie, PieChart, Sector } from "recharts";
 import { PieSectorDataItem } from "recharts/types/polar/Pie";
+import { MechanicTotalCases } from "../../_server/schema";
+import { useMemo } from "react";
 
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-];
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  total: {
+    label: "Total Cases",
   },
-  chrome: {
-    label: "Chrome",
+  active: {
+    label: "Active",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  pending: {
+    label: "Pending",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  finished: {
+    label: "Finished",
     color: "hsl(var(--chart-3))",
-  },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig;
 
-export function ActiveCases() {
+export function ActiveCases(data: MechanicTotalCases) {
+  const chartData = useMemo(() => {
+    return [
+      { status: "active", total: data.active, fill: "#456" },
+      { status: "pending", total: data.pending, fill: "#765" },
+      { status: "finished", total: data.finished, fill: "#956" },
+    ];
+  }, [data.active, data.pending, data.finished]);
+
   return (
     <ChartContainer
       config={chartConfig}
@@ -55,8 +50,8 @@ export function ActiveCases() {
         />
         <Pie
           data={chartData}
-          dataKey="visitors"
-          nameKey="browser"
+          dataKey="total"
+          nameKey="status"
           innerRadius={60}
           strokeWidth={5}
           activeIndex={0}

@@ -6,13 +6,21 @@ import { useMechanicsContext } from "../../_context/mechanics/useMechanicsContex
 import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ActiveCases } from "../charts/ActiveCases";
 import { CasesPerMonth } from "../charts/CasesPerMonth";
+import { CasesPerMonth as ICasesPerMonth, MechanicTotalCases } from "../../_server/schema";
 
 const asideVariants: Variants = {
   visible: { x: 0, opacity: 1 },
   hidden: { x: -500, opacity: 0 },
 };
 
-export const DashboardAside = () => {
+interface DashboardAsideProps {
+  chartsData: {
+    mechanicTotalCases: MechanicTotalCases;
+    mechanicCasesPerMonth: ICasesPerMonth;
+  }
+}
+
+export const DashboardAside = ({ chartsData }: DashboardAsideProps) => {
   const { selectedMechanic } = useMechanicsContext();
 
   return (
@@ -37,13 +45,13 @@ export const DashboardAside = () => {
                 <h4 className="dark:text-gray-400 text-gray-700 font-semibold text-base mb-4">
                   Active cases
                 </h4>
-                <ActiveCases />
+                <ActiveCases {...chartsData.mechanicTotalCases} />
               </Card>
               <Card className="flex-grow items-center relative">
                 <h4 className="dark:text-gray-400 text-gray-700 font-semibold text-base mb-4">
                   Cases per month
                 </h4>
-                <CasesPerMonth />
+                <CasesPerMonth data={chartsData.mechanicCasesPerMonth} />
               </Card>
             </div>
           </div>
